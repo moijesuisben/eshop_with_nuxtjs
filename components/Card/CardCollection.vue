@@ -5,12 +5,8 @@
       :key="collection.name"
       style="list-style: none"
     >
-      <!-- QUESTIONS: 
-      - Comment mettre le lien en dynamique avec un objet ?
-      - Comment mettre src + alt de l'image en dynamique avec un objet ?
-      -->
       <nuxt-link to="/collection1">
-        <div class="center-card mb-12">
+        <div class="mb-12">
           <div class="max-w-full rounded overflow-hidden shadow-lg">
             <img
               class="w-full"
@@ -44,17 +40,8 @@
   </ul>
 </template>
 
-<style>
-.center-card {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-</style>
-
 <script>
 export default {
-  name: "CardCollection",
   props: {
     collections: Array,
   },
