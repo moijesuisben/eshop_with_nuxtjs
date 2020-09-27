@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-center mb-5">
+  <div class="flex justify-center">
     <p class="w-2/4 text-center">{{ content }}</p>
   </div>
 </template>

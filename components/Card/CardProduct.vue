@@ -1,35 +1,50 @@
 <template>
-  <!-- <ul class="flex flex-row justify-evenly flex-wrap"> -->
-  <ul class="flex flex-row flex-wrap pl-16">
-    <li
-      v-for="product in products"
-      :key="product.name"
-      style="list-style: none"
-      class="max-w-sm rounded overflow-hidden shadow-lg my-5 mr-12"
-    >
-      <img
-        class="w-full"
-        src="../../assets/img/sky.jpg"
-        alt="Sunset in the mountains"
-      />
-      <div class="px-6 py-4">
-        <div class="font-medium text-xl mb-2">{{ product.name }}</div>
-        <div class="font-bold text-xl mb-2">{{ product.price }}</div>
-      </div>
-      <div class="px-6 pb-2">
-        <nuxt-link
-          to="/product"
-          class="inline-block bg-gray-200 rounded-md px-4 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 hover:bg-gray-400"
-          >En savoir plus</nuxt-link
+  <div class="text-gray-700 body-font">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="flex flex-wrap -m-4">
+        <div
+          class="p-4 md:w-1/3"
+          v-for="product in products"
+          :key="product.name"
         >
-        <nuxt-link
-          to="/product"
-          class="inline-block bg-gray-200 rounded-md px-4 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 hover:bg-gray-400"
-          >Ajouter au panier</nuxt-link
-        >
+          <div
+            class="h-full border-2 border-gray-200 rounded-lg overflow-hidden"
+          >
+            <img
+              class="lg:h-48 md:h-36 w-full object-cover object-center"
+              src="https://dummyimage.com/720x400"
+              alt="blog"
+            />
+            <div class="p-6">
+              <h2
+                class="tracking-widest text-xs title-font font-medium text-gray-500 mb-1"
+              >
+                {{ product.brand }}
+              </h2>
+              <h1 class="title-font text-lg font-medium text-gray-900 mb-3">
+                {{ product.name }}
+              </h1>
+              <p class="leading-relaxed mb-3">
+                {{ product.desc }}
+              </p>
+              <div class="flex items-center flex-wrap">
+                <nuxt-link
+                  to="/product"
+                  class="inline-block bg-gray-200 rounded-md px-4 py-1 text-sm font-semibold text-gray-700 mr-2 hover:bg-gray-400 md:mb-2 lg:mb-0"
+                  >En savoir plus</nuxt-link
+                >
+                <nuxt-link
+                  to="/product"
+                  class="inline-block bg-gray-200 rounded-md px-4 py-1 text-sm font-semibold text-gray-700 mr-2 hover:bg-gray-400 md:mb-2 lg:mb-0"
+                  >Ajouter au panier</nuxt-link
+                >
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </li>
-  </ul>
+    </div>
+  </div>
 </template>
 
 <script>
