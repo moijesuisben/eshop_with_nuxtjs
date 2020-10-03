@@ -1,6 +1,9 @@
 <template>
-  <div class="flex justify-center">
-    <p class="w-2/4 text-center">{{ product && product.desc }}</p>
+  <div>
+    <Title />
+    <Description />
+    <!-- <CardProduct :products="collections" /> -->
+    <CardProduct />
   </div>
 </template>
 
@@ -12,10 +15,10 @@ export default {
       return this.$store.state.collections.collections;
     },
     product() {
-      // console.log(this.collections, this.$route.params.id);
-      // console.log(
-      //   this.collections.find((value) => value._id === this.$route.params.id)
-      // );
+      /* console.log(this.collections, this.$route.params.id);
+      console.log(
+        this.collections.find((value) => value._id === this.$route.params.id)
+      ); */
       return this.collections.find(
         (value) => value._id === this.$route.params.id
       );

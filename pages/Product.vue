@@ -5,7 +5,7 @@
         <img
           alt="ecommerce"
           class="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded"
-          src="https://dummyimage.com/400x400"
+          src="https://dummyimage.com/496x496"
         />
         <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
           <h2 class="text-sm title-font text-gray-500 tracking-widest">
@@ -156,7 +156,7 @@
                 <select
                   class="rounded border appearance-none border-gray-400 py-2 focus:outline-none focus:border-indigo-500 text-base pl-3 pr-10"
                 >
-                  <option>SM</option>
+                  <option>S</option>
                   <option>M</option>
                   <option>L</option>
                   <option>XL</option>

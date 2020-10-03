@@ -3,34 +3,26 @@
 </template>
 
 <script>
+import { mapMutations } from "vuex";
 export default {
-  data: function () {
-    return {
-      collections: [
-        {
-          url: "/collection1",
-          name: "name collection1",
-          desc: "lorem ipsum",
-          tag1: "test",
-          tag2: "hola",
-          tag3: "hup",
-        },
-        {
-          name: "name collection2",
-          desc: "lorem ipsum",
-          tag1: "test",
-          tag2: "hola",
-          tag3: "hup",
-        },
-        {
-          name: "name collection2",
-          desc: "lorem ipsum",
-          tag1: "test",
-          tag2: "hola",
-          tag3: "hup",
-        },
-      ],
-    };
+  computed: {
+    collections() {
+      return this.$store.state.collections.collections;
+    },
   },
 };
+
+/* xport default {
+  data() {
+    return {
+      collections: [],
+    };
+  }, 
+ async fetch() {
+    this.collections = await this.$http.$get(
+      "http://www.json-generator.com/api/json/get/bUNELgwamq?indent=2"
+    );
+    console.log("🔴 ici => ", this.collections);
+  }, 
+};*/
 </script>

@@ -10,11 +10,13 @@
   },
   "dependencies": {
     "@nuxt/content": "^1.8.1",
+    "@nuxt/http": "^0.6.0",
     "@nuxtjs/axios": "^5.12.2",
     "@nuxtjs/pwa": "^3.0.2",
     "core-js": "^3.6.5",
     "nuxt": "^2.14.5",
-    "tailwindcss": "^1.8.10"
+    "tailwindcss": "^1.8.10",
+    "vuex": "^3.5.1"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^3.0.2"

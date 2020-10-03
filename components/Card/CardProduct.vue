@@ -2,9 +2,14 @@
   <div class="text-gray-700 body-font">
     <div class="container px-5 py-24 mx-auto">
       <div class="flex flex-wrap -m-4">
-        <div
+        <!-- <div
           class="p-4 md:w-1/3"
           v-for="product in products"
+          :key="product.name"
+        > -->
+        <div
+          class="p-4 md:w-1/3"
+          v-for="product in product.products"
           :key="product.name"
         >
           <div
@@ -17,15 +22,15 @@
             />
             <div class="p-6">
               <h2
-                class="tracking-widest text-xs title-font font-medium text-gray-500 mb-1"
+                class="tracking-widest text-xs title-font font-medium text-gray-500 mb-1 uppercase"
               >
-                {{ product.brand }}
+                {{ product.name }}
               </h2>
               <h1 class="title-font text-lg font-medium text-gray-900 mb-3">
-                {{ product.name }}
+                {{ product.productName }}
               </h1>
               <p class="leading-relaxed mb-3">
-                {{ product.desc }}
+                {{ product.price }}€
               </p>
               <div class="flex items-center flex-wrap">
                 <nuxt-link
@@ -48,9 +53,21 @@
 </template>
 
 <script>
+import { mapMutations } from "vuex";
 export default {
-  props: {
-    products: Array,
+  computed: {
+    collections() {
+      return this.$store.state.collections.collections;
+    },
+    product() {
+      console.log(this.collections, this.$route.params.id);
+      console.log(
+        this.collections.find((value) => value._id === this.$route.params.id)
+      );
+      return this.collections.find(
+        (value) => value._id === this.$route.params.id
+      );
+    },
   },
 };
 </script>
