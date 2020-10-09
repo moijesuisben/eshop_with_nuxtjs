@@ -29,12 +29,10 @@
               <h1 class="title-font text-lg font-medium text-gray-900 mb-3">
                 {{ product.productName }}
               </h1>
-              <p class="leading-relaxed mb-3">
-                {{ product.price }}€
-              </p>
+              <p class="leading-relaxed mb-3">{{ product.price }}€</p>
               <div class="flex items-center flex-wrap">
                 <nuxt-link
-                  to="/product"
+                  :to="product.url"
                   class="inline-block bg-gray-200 rounded-md px-4 py-1 text-sm font-semibold text-gray-700 mr-2 hover:bg-gray-400 md:mb-2 lg:mb-0"
                   >En savoir plus</nuxt-link
                 >
@@ -60,12 +58,8 @@ export default {
       return this.$store.state.collections.collections;
     },
     product() {
-      console.log(this.collections, this.$route.params.id);
-      console.log(
-        this.collections.find((value) => value._id === this.$route.params.id)
-      );
       return this.collections.find(
-        (value) => value._id === this.$route.params.id
+        (value) => value._id === this.$route.params.collection
       );
     },
   },

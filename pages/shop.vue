@@ -11,18 +11,4 @@ export default {
     },
   },
 };
-
-/* xport default {
-  data() {
-    return {
-      collections: [],
-    };
-  }, 
- async fetch() {
-    this.collections = await this.$http.$get(
-      "http://www.json-generator.com/api/json/get/bUNELgwamq?indent=2"
-    );
-    console.log("🔴 ici => ", this.collections);
-  }, 
-};*/
 </script>

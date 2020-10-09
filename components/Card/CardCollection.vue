@@ -44,11 +44,5 @@ export default {
   props: {
     collections: Array,
   },
-
-  /* computed: {
-    collections() {
-      return this.$store.state.collections.list
-    }
-  } */
 };
 </script>

@@ -2,7 +2,7 @@
   <div>
     <Title />
     <Description />
-    <!-- <CardProduct :products="collections" /> -->
+    <!-- <CardProduct /> -->
     <CardProduct />
   </div>
 </template>
@@ -20,7 +20,7 @@ export default {
         this.collections.find((value) => value._id === this.$route.params.id)
       ); */
       return this.collections.find(
-        (value) => value._id === this.$route.params.id
+        (value) => value._id === this.$route.params.collection
       );
     },
   },
