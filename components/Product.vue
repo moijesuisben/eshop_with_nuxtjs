@@ -54,9 +54,10 @@
           </div>
           <div class="flex">
             <span class="title-font font-medium text-2xl text-gray-900"
-              >{{product.price}} €</span
+              >{{ product.price }} €</span
             >
             <button
+              @click="addToCart(product)"
               class="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded"
             >
               Ajouter au panier
@@ -72,6 +73,17 @@
 console.log("☸ Hello 🐋");
 import { mapMutations } from "vuex";
 export default {
+  props: ["product"],
+
+  methods: {
+    addToCart(product) {
+      this.$store.dispatch("addProductToCart", {
+        product: product,
+        quantity: 1,
+      });
+    },
+  },
+
   computed: {
     collection() {
       return this.$store.state.collections.collections.find(

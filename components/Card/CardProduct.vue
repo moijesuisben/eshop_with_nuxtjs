@@ -2,11 +2,6 @@
   <div class="text-gray-700 body-font">
     <div class="container px-5 py-24 mx-auto">
       <div class="flex flex-wrap -m-4">
-        <!-- <div
-          class="p-4 md:w-1/3"
-          v-for="product in products"
-          :key="product.name"
-        > -->
         <div
           class="p-4 md:w-1/3"
           v-for="product in product.products"
@@ -36,11 +31,12 @@
                   class="inline-block bg-gray-200 rounded-md px-4 py-1 text-sm font-semibold text-gray-700 mr-2 hover:bg-gray-400 md:mb-2 lg:mb-0"
                   >En savoir plus</nuxt-link
                 >
-                <nuxt-link
-                  to="/product"
+                <button
+                  @click="addToCart(product)"
                   class="inline-block bg-gray-200 rounded-md px-4 py-1 text-sm font-semibold text-gray-700 mr-2 hover:bg-gray-400 md:mb-2 lg:mb-0"
-                  >Ajouter au panier</nuxt-link
                 >
+                  Ajouter au panier
+                </button>
               </div>
             </div>
           </div>
@@ -53,6 +49,17 @@
 <script>
 import { mapMutations } from "vuex";
 export default {
+  props: ["product"],
+
+  methods: {
+    addToCart(product) {
+      this.$store.dispatch("addProductToCart", {
+        product: product,
+        quantity: 1,
+      });
+    },
+  },
+
   computed: {
     collections() {
       return this.$store.state.collections.collections;
