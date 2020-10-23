@@ -4,14 +4,6 @@
       <Logo />
       <h1 class="title">eshop-nuxtjs</h1>
       <div class="links">
-        <!-- <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Entrer dans la boutique
-        </a> -->
         <nuxt-link to="/shop" class="button--green"
           >Entrer dans la boutique</nuxt-link
         >
@@ -27,11 +19,6 @@ export default {
 </script>
 
 <style>
-/* Sample `apply` at-rules with Tailwind CSS
-.container {
-@apply min-h-screen flex justify-center items-center text-center mx-auto;
-}
-*/
 .container {
   margin: 0 auto;
   min-height: 100vh;

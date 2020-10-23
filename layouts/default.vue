@@ -1,6 +1,6 @@
 <template>
   <div>
-    <HeaderV2 />
+    <Header />
     <Nuxt class="p-6" />
   </div>
 </template>

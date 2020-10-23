@@ -11,8 +11,6 @@ export const ADD_TO_CART = (state, { product, quantity }) => {
     return item.product._id === product._id;
   });
 
-  console.log("🌽 productInCart => ", productInCart);
-
   if (productInCart) {
     productInCart.quantity += quantity;
     return;
@@ -23,3 +21,7 @@ export const ADD_TO_CART = (state, { product, quantity }) => {
     quantity
   });
 };
+
+// export const REMOVE_TO_CART = (state, {product, quantity}) => {
+//   let
+// };

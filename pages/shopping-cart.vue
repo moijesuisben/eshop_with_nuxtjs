@@ -18,7 +18,6 @@
           </thead>
           <tbody>
             <tr v-for="item in cart" :key="item.product.id">
-              <!-- <tr> -->
               <!-- IMAGE -->
               <td class="hidden pb-4 md:table-cell">
                 <a href="#">
@@ -33,11 +32,9 @@
               <!-- PRODUCT NAME -->
               <td>
                 <p class="mb-2">{{ item.product.productName }}</p>
-                <form action="" method="POST">
-                  <button type="submit" class="text-gray-700">
-                    <small>(Remove item)</small>
-                  </button>
-                </form>
+                <button @click="removeProduct(product)" class="text-gray-700">
+                  <small>(Remove item)</small>
+                </button>
               </td>
               <!-- FIN PRODUCT NAME -->
               <!-- QUANTITY -->
@@ -117,8 +114,13 @@ export default {
     },
   },
 
-  // mounted() {
-  //   this.$store.dispatch("getCardItems");
-  // },
+  methods: {
+    removeProduct(product) {
+      this.$store.dispatch("removeProductToCart", {
+        product: product,
+        quantity: -1,
+      });
+    },
+  },
 };
 </script>
